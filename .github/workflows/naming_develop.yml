@@ -1,0 +1,24 @@
+name: Gitflow-Develop
+on: 
+  # To create pull requests.
+  pull_request:
+    branches:
+    - develop
+  #push:
+  # To merge pull requests if not possible during the push run. Remove if `auto-merge` is `false`.
+  pull_request_review:
+  check_run:
+    types: [completed]
+
+jobs:
+  naming:
+    name: Branching
+    runs-on: ubuntu-16.04
+    steps:
+    - uses: deepakputhraya/action-branch-name@master
+      with:
+        regex: '([a-z])+\/([a-z])+' # Regex the branch should match. This example enforces grouping
+        allowed_prefixes: 'feature,stable,fix' # All branches should start with the given prefix
+        ignore: master,develop # Ignore exactly matching branch names from convention
+        min_length: 5 # Min length of the branch name
+        max_length: 20 # Max length of the branch name
