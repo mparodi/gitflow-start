@@ -1,4 +1,4 @@
-name: Gitflow-Develop
+name: Gitflow-Main
 on: 
   # To create pull requests.
   pull_request:
