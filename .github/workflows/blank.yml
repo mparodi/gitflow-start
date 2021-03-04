@@ -10,7 +10,7 @@ on:
 jobs:
   build:
     name: Gitflow
-    runs-on: [self-hosted, linux, ARM64]
+    runs-on: [self-hosted, linux, x64]
     steps:
     - uses: Logerfo/gitflow-action@0.0.4
       with:
